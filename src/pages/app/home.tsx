@@ -7,16 +7,16 @@ import PostCard from '../../components/Home/PostCard'
 import SEO from '../../components/seo'
 
 function Creations({ data }) {
-  const posts = data.allGhostPost.edges;
+  const posts = data.allGhostPost.edges
 
   return (
     <Layout>
-      <SEO title='news' />
-      <div className='grid gap-4 grid-cols-4 w-full h-full p-4'>
-        {posts.map(({ node }) =>
+      <SEO title="news" />
+      <div className="grid items-start gap-4 grid-cols-4 w-full h-full p-4">
+        {posts.map(({ node }) => (
           // The tag below includes the markup for each post - components/common/PostCard.js
           <PostCard key={node.id} post={node} />
-        )}
+        ))}
       </div>
     </Layout>
   )
